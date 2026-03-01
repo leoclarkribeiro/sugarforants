@@ -1,0 +1,683 @@
+/* ===== Sugar for Ants — Psyjazz Project ===== */
+/* Electronic / Psytrance × Jazz aesthetic */
+
+:root {
+  --bg-deep: #050508;
+  --bg-dark: #0a0a0f;
+  --bg-card: rgba(15, 12, 24, 0.7);
+  --accent-cyan: #00f5ff;
+  --accent-magenta: #ff00aa;
+  --accent-purple: #9945ff;
+  --accent-amber: #ffaa00;
+  --text-primary: #f0f0f5;
+  --text-muted: rgba(240, 240, 245, 0.6);
+  --border-glow: rgba(0, 245, 255, 0.4);
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ===== Background Effects ===== */
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.gradient-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.4;
+  animation: orbFloat 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.gradient-orb-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
+  top: -200px;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.gradient-orb-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--accent-cyan) 0%, transparent 70%);
+  top: 40%;
+  right: -150px;
+  animation-delay: -7s;
+}
+
+.gradient-orb-3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--accent-magenta) 0%, transparent 70%);
+  bottom: -100px;
+  left: 30%;
+  animation-delay: -14s;
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -30px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+.scanlines {
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.5;
+}
+
+/* ===== Header ===== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 2rem;
+  z-index: 100;
+  background: linear-gradient(to bottom, rgba(5, 5, 8, 0.9) 0%, transparent 100%);
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.nav-link {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent-cyan);
+  text-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+}
+
+/* ===== Hero ===== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.hero-content {
+  animation: fadeUp 1.2s ease-out;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo-container {
+  margin-bottom: 1rem;
+}
+
+.logo {
+  max-width: 340px;
+  width: 90vw;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 0 40px rgba(0, 245, 255, 0.25));
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 12vw, 7rem);
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  line-height: 1.1;
+}
+
+.logo-line {
+  display: block;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-line.accent {
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-magenta) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 40px rgba(0, 245, 255, 0.4);
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+  margin-bottom: 0.5rem;
+  animation: fadeUp 1.2s ease-out 0.2s both;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+  letter-spacing: 0.2em;
+  animation: fadeUp 1.2s ease-out 0.4s both;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fadeUp 1.2s ease-out 0.6s both, bounce 2s ease-in-out infinite 1.5s;
+}
+
+.scroll-indicator span {
+  display: block;
+  width: 24px;
+  height: 40px;
+  border: 2px solid var(--accent-cyan);
+  border-radius: 12px;
+  position: relative;
+}
+
+.scroll-indicator span::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background: var(--accent-cyan);
+  border-radius: 2px;
+  animation: scrollPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 0.3; transform: translateX(-50%) translateY(8px); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ===== Sections ===== */
+
+.section {
+  padding: 6rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.section-title span {
+  position: relative;
+}
+
+.section-title span::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-cyan), transparent);
+}
+
+/* ===== About ===== */
+
+.about-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+.about-text strong {
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.about-text em {
+  color: var(--accent-purple);
+  font-style: italic;
+}
+
+/* ===== Spotify Card ===== */
+
+.spotify-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.spotify-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.03) 0%, rgba(153, 69, 255, 0.03) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.spotify-card:hover {
+  border-color: var(--border-glow);
+  box-shadow: 0 0 40px rgba(0, 245, 255, 0.1);
+}
+
+.spotify-card:hover::before {
+  opacity: 1;
+}
+
+.spotify-badge {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #1DB954;
+  background: rgba(29, 185, 84, 0.15);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.spotify-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card-arrow {
+  margin-left: auto;
+  font-size: 1.5rem;
+  color: var(--accent-cyan);
+  transition: transform 0.3s ease;
+}
+
+.spotify-card:hover .card-arrow {
+  transform: translateX(6px);
+}
+
+/* ===== Tracks ===== */
+
+.listen-hint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.track-category {
+  margin-bottom: 2.5rem;
+}
+
+.track-category:last-child {
+  margin-bottom: 0;
+}
+
+.track-category-title {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: var(--accent-purple);
+  margin-bottom: 1rem;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.track-item:hover {
+  border-color: rgba(0, 245, 255, 0.3);
+  background: rgba(15, 12, 24, 0.9);
+  box-shadow: 0 0 30px rgba(0, 245, 255, 0.05);
+  transform: translateX(4px);
+}
+
+.track-badge {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--accent-magenta);
+  background: rgba(255, 0, 170, 0.15);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.track-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.track-detail {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.track-play-icon {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.track-item:hover .track-play-icon {
+  color: var(--accent-cyan);
+}
+
+.track-item.playing .track-play-icon {
+  color: var(--accent-cyan);
+}
+
+.track-item.playing {
+  border-color: rgba(0, 245, 255, 0.4);
+  box-shadow: 0 0 30px rgba(0, 245, 255, 0.08);
+}
+
+/* ===== Contact ===== */
+
+.contact .section-content {
+  text-align: center;
+}
+
+.email-link {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.email-link:hover {
+  color: var(--accent-magenta);
+  text-shadow: 0 0 20px rgba(255, 0, 170, 0.4);
+}
+
+.credits, .copyright {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.credits {
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Audio Player ===== */
+
+.audio-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(5, 5, 8, 0.98);
+  border-top: 1px solid rgba(0, 245, 255, 0.2);
+  padding: 1rem 1.5rem;
+  z-index: 200;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(12px);
+}
+
+.audio-player.visible {
+  transform: translateY(0);
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.player-btn {
+  background: transparent;
+  border: none;
+  color: var(--accent-cyan);
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.player-btn:hover {
+  color: var(--text-primary);
+  transform: scale(1.05);
+}
+
+.player-btn .pause-icon {
+  display: none;
+}
+
+.audio-player.playing .play-icon {
+  display: none;
+}
+
+.audio-player.playing .pause-icon {
+  display: inline;
+}
+
+.player-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.player-track-name {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.player-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+  border-radius: 3px;
+  transition: width 0.1s linear;
+}
+
+.player-time,
+.player-duration {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  min-width: 2.5rem;
+}
+
+.volume-btn {
+  flex-shrink: 0;
+}
+
+.volume-slider {
+  width: 70px;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  background: var(--accent-cyan);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: var(--accent-cyan);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 768px) {
+  .nav {
+    gap: 1.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+  }
+
+  .section {
+    padding: 4rem 1.5rem;
+  }
+
+  .spotify-card {
+    flex-wrap: wrap;
+    padding: 1.5rem;
+  }
+
+  .card-arrow {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .player-controls {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .volume-slider {
+    display: none;
+  }
+}

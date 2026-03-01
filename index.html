@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sugar for Ants — Psyjazz Project</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="noise-overlay"></div>
+  <div class="gradient-orb gradient-orb-1"></div>
+  <div class="gradient-orb gradient-orb-2"></div>
+  <div class="gradient-orb gradient-orb-3"></div>
+  
+  <div class="scanlines"></div>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#releases" class="nav-link">Releases</a>
+      <a href="#listen" class="nav-link">Listen</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="logo-container">
+          <img src="assets/logo.png" alt="Sugar for Ants" class="logo">
+        </div>
+        <p class="tagline">The Psyjazz Project</p>
+        <p class="hero-sub">Full-on Psytrance × Jazz</p>
+      </div>
+      <div class="scroll-indicator">
+        <span></span>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="section-content">
+        <h2 class="section-title"><span>About</span></h2>
+        <div class="about-grid">
+          <p class="about-text">
+            Sugar for Ants started with producers <strong>Paulo Gouvea</strong> and <strong>Leo Clark</strong> 
+            with the intention of mixing full-on psytrance with cool old jazz tunes from Miles Davis and Stephane Grapelli.
+          </p>
+          <p class="about-text">
+            Download demo remixes and a sample from <em>"The Psyjazz tapes"</em> below. 
+            Enjoy — we're still learning to prepare Sugar :)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="releases" class="section releases">
+      <div class="section-content">
+        <h2 class="section-title"><span>Latest Release</span></h2>
+        <a href="https://open.spotify.com/album/6gCKzEoMYjw0nE7bYJsFqd?si=DKapj7KkQyqxMmAv4EQJzQ" 
+           target="_blank" rel="noopener noreferrer" class="spotify-card">
+          <span class="spotify-badge">Spotify</span>
+          <h3>Benbodhi: Decoded Original Soundtrack</h3>
+          <span class="card-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="listen" class="section listen">
+      <div class="section-content">
+        <h2 class="section-title"><span>Demo Remixes</span></h2>
+        <p class="listen-hint">Click to play • Right-click to download</p>
+        <div class="tracks">
+          <div class="track-category">
+            <h3 class="track-category-title">Live Sets</h3>
+            <a href="https://sugarforants.xyz/dj%20leoclark%20sfa%20sample%2008%202006.mp3" 
+               class="track-item" data-track="Dj Set (Leo Clark)" download>
+              <span class="track-badge">NEW</span>
+              <span class="track-info">
+                <span class="track-name">Dj Set (Leo Clark)</span>
+                <span class="track-detail">Rinkadink / Ferbi Boys / Xerox & Illumination rmx • 13:45</span>
+              </span>
+              <span class="track-play-icon">▶</span>
+            </a>
+            <a href="https://sugarforants.xyz/sfa%20live%2026jul2006.mp3" 
+               class="track-item" data-track="Sfa Live Set (Paulo Gouvea)" download>
+              <span class="track-badge">NEW</span>
+              <span class="track-info">
+                <span class="track-name">Sfa Live Set (Paulo Gouvea)</span>
+                <span class="track-detail">Skulptor / Suria vs. Miles Davis rmx • From "The Psyjazz tapes" • 13:31</span>
+              </span>
+              <span class="track-play-icon">▶</span>
+            </a>
+          </div>
+          <div class="track-category">
+            <h3 class="track-category-title">Remixes</h3>
+            <a href="https://sugarforants.xyz/sfa%2001%20-%20blue%20objects%20rmx%20-%20mental%20skragma%20vs%20miles%20davis.mp3" 
+               class="track-item" data-track="Blue Objects rmx" download>
+              <span class="track-info">
+                <span class="track-name">Blue Objects rmx</span>
+                <span class="track-detail">Mental Skragma vs. Miles Davis</span>
+              </span>
+              <span class="track-play-icon">▶</span>
+            </a>
+            <a href="https://sugarforants.xyz/sfa%2002%20-%20eyedentify%20rmx%20-%20miranda%20vs%20miles%20davis.mp3" 
+               class="track-item" data-track="Eyedentify rmx" download>
+              <span class="track-info">
+                <span class="track-name">Eyedentify rmx</span>
+                <span class="track-detail">Miranda vs. Miles Davis</span>
+              </span>
+              <span class="track-play-icon">▶</span>
+            </a>
+            <a href="https://sugarforants.xyz/sfa%2003%20-%20nexus%206%20rmx%20-%20silicon%20sounds%20vs%20miles%20davis.mp3" 
+               class="track-item" data-track="Nexus 6 rmx" download>
+              <span class="track-info">
+                <span class="track-name">Nexus 6 rmx</span>
+                <span class="track-detail">Silicon Sounds vs. Miles Davis</span>
+              </span>
+              <span class="track-play-icon">▶</span>
+            </a>
+            <a href="https://sugarforants.xyz/sfa%2004%20-%20xen%20la%20rmx%20-%20silver%20surfers%20vs%20miles%20davis.mp3" 
+               class="track-item" data-track="Xen La rmx" download>
+              <span class="track-info">
+                <span class="track-name">Xen La rmx</span>
+                <span class="track-detail">Silver Surfers vs. Miles Davis</span>
+              </span>
+              <span class="track-play-icon">▶</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="section-content">
+        <h2 class="section-title"><span>Contact</span></h2>
+        <a href="mailto:sugarforants@gmail.com" class="email-link">sugarforants@gmail.com</a>
+        <p class="credits">Logo by Koolture's Daniela Conolly</p>
+        <p class="copyright">Sugar for Ants (cc0) 2005–2026</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Audio Player (fixed at bottom when playing) -->
+  <div class="audio-player" id="audioPlayer">
+    <audio id="audioElement" preload="metadata"></audio>
+    <div class="player-controls">
+      <button type="button" class="player-btn play-pause" id="playPauseBtn" aria-label="Play / Pause">
+        <span class="btn-icon play-icon">▶</span>
+        <span class="btn-icon pause-icon">❚❚</span>
+      </button>
+      <div class="player-info">
+        <span class="player-track-name" id="playerTrackName">—</span>
+        <div class="player-progress">
+          <div class="progress-bar" id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <span class="player-time" id="playerTime">0:00</span>
+          <span class="player-duration" id="playerDuration">0:00</span>
+        </div>
+      </div>
+      <button type="button" class="player-btn volume-btn" id="volumeBtn" aria-label="Volume">
+        <span class="volume-icon">🔊</span>
+      </button>
+      <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
