@@ -1,4 +1,4 @@
-# Sugar for Ants — Psyjazz Project
+# Sugar for Ants: Psyjazz Project
 
 A modern, atmospheric single-page website for the Sugar for Ants electronic music project.
 
@@ -26,4 +26,4 @@ python -m http.server 8000
 
 ## Deploy
 
-Static files—upload `index.html`, `styles.css`, `script.js` (and `logo.png` if used) to any web host. Works with GitHub Pages, Netlify, Vercel, etc.
+Static files: upload `index.html`, `styles.css`, `script.js` (and `logo.png` if used) to any web host. Works with GitHub Pages, Netlify, Vercel, etc.

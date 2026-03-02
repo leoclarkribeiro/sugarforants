@@ -1,4 +1,4 @@
-// Sugar for Ants — Interactive enhancements
+// Sugar for Ants: Interactive enhancements
 
 function formatTime(seconds) {
   if (isNaN(seconds) || !isFinite(seconds)) return '0:00';
